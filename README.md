@@ -82,15 +82,6 @@ When the following fields are set to `auto`, they are filled automatically based
 ```bash
 bash bash_train.sh
 ```
-
-Equivalent command:
-
-```bash
-python3 main.py --config_path "configs/train.yml"
-```
-
-Checkpoints are saved by default under `model_ckpt/<timestamp>/`.
-
 ## 6. Inference
 
 1. Edit `configs/inference.yml` and verify at least:
@@ -106,12 +97,6 @@ Checkpoints are saved by default under `model_ckpt/<timestamp>/`.
 
 ```bash
 bash bash_inference.sh
-```
-
-Equivalent command:
-
-```bash
-python3 main.py --config_path "configs/inference.yml"
 ```
 
 Inference outputs are saved to:
