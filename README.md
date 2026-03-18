@@ -1,4 +1,6 @@
-# Full-scale Representation Guided Network for Retinal Vessel Segmentation
+# HR-MFNet: Hierarchical Refinement Network with Multi-Frequency Interaction for Retinal Vascular Structure Segmentation
+
+
 Official repository of the paper HR-MFNet: Hierarchical Refinement Network with Multi-Frequency Interaction
 for Retinal Vascular Structure Segmentation
 
@@ -23,8 +25,7 @@ for Retinal Vascular Structure Segmentation
 
 
 ## ✅ Pretrained model for each dataset
-Each pre-trained model could be found on 
-#[release version](https://github.com/ZombaSY/FSG-Net-pytorch/releases/tag/1.1.0)
+Each pre-trained model could be found on [release version](https://github.com/ZombaSY/FSG-Net-pytorch/releases/tag/1.1.0)
 
 
 ## 🧻 Dataset Preparation
@@ -52,6 +53,7 @@ bash bash_train.sh
 
 For <b>Inference</b>, edit the [<b>configs/inference.yml</b>](configs/inference.yml) and execute below command. <br>
 Please locate your model path via `model_path` in [<b>configs/inference.yml</b>](configs/inference.yml)</b>
+
 ```
 bash bash_inference.sh
 ```
