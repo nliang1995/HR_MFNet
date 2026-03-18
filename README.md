@@ -137,7 +137,5 @@ Each sample exports `_argmax.png` and `_target.png`.
 
 Release: https://github.com/nliang1995/HR-MFNet/releases/tag/weight_20260318
 
-## 12. Citation
-
 
 ```
