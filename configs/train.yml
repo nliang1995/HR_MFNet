@@ -1,0 +1,58 @@
+{
+ ### Environment Parameters
+  debug: false,
+  mode: train,
+  cuda: true,
+  pin_memory: true,
+  wandb: false,
+  worker: 8,
+  log_interval: 9999,
+  save_interval: 1,
+  saved_model_directory: 'model_ckpt',
+  train_fold: 1,
+  project_name: 'HR_MFNet', 
+  CUDA_VISIBLE_DEVICES: '0',
+  dataset_name: 'DRIVE', # DRIVE, STARE, CHASE_DB1, HRF, OCTA500, OCTA500_3MM, OCTA500_6MM
+  data_root: './data',
+  use_fov: false,
+  mask_input_outside_fov: false,
+
+  ### Train Parameters
+  model_name: 'HR_MFNet',
+    n_classes: 1,
+    in_channels: 3,
+  dataloader: 'Image2Image_zero_pad', #other：Image2Image_zero_pad, RVD:Image2Image_resize
+  criterion: 'DiceBCELoss', # DiceBCELoss
+  task: 'segmentation',
+  input_space: 'RGB',
+  input_channel: 3,
+  input_size: auto,  # auto by dataset path: DRIVE:608, STARE:704, CHASE_DB1:1024, HRF:1344, OCTA500-3mm:304, OCTA500-6mm:400
+  optimizer: 'AdamW',
+    lr: 0.001,
+    scheduler: 'WarmupCosine',  # ConstantLRSchedule, WarmupCosine
+    cycles: 100,
+    warmup_epoch: 30,
+    weight_decay: 0.05, # 0.05
+  batch_size: 4,
+  epoch: 20000,
+  ema_decay: 0, # set 0 to deactivate
+  class_weight: [1.0, 1.0],
+  model_path: '', # pretrained/LPLSNet-DRIVE.pt
+    freeze_layer: false,
+
+  ### Augmentation Parameters
+  transform_blur: true,
+  transform_jitter: true,
+  transform_hflip: true,
+  transform_perspective: true,
+  transform_cutmix: false,
+  transform_rand_resize: true, 
+  transform_rand_crop: auto,  # auto by dataset path: DRIVE 288, CHASE_DB1 480, STARE 288, OCTA500 128
+
+  train_x_path: auto,
+  train_y_path: auto,
+  train_z_path: auto,
+  val_x_path: auto,
+  val_y_path: auto,
+  val_z_path: auto,
+}

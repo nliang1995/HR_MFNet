@@ -1,0 +1,28 @@
+{
+  ### Environment Parameters
+  debug: false,
+  mode: inference,
+  cuda: true,
+  pin_memory: true,
+  wandb: false,
+  worker: 2,
+  CUDA_VISIBLE_DEVICES: '1',
+  dataset_name: 'DRIVE', # DRIVE, STARE, CHASE_DB1, HRF, OCTA500, OCTA500_3MM, OCTA500_6MM
+  model_name: 'HR_MFNet',
+  model_path: './model_ckpt/DRIVE/DRIVE_best.pt',
+  data_root: './data',
+  val_x_path: auto,
+  val_y_path: auto,
+  val_z_path: auto,
+  n_classes: 1,
+  in_channels: 3,
+  inference_mode: 'segmentation',
+  task: 'segmentation',
+  dataloader: 'Image2Image_zero_pad', # Image2Image_zero_pad, Image2Image_resize
+  criterion: 'DiceBCE',
+  input_space: 'RGB',
+  input_channel: 3,
+  input_size: auto,  # auto by dataset path: DRIVE:608, STARE:704, CHASE_DB1:1024, HRF:1344, OCTA500-3mm:304, OCTA500-6mm:400
+  use_fov: false,
+  mask_input_outside_fov: false,
+}
