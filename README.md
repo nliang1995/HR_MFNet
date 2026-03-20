@@ -90,11 +90,7 @@ When set to `auto`, these fields are resolved from `dataset_name`:
 bash bash_train.sh
 ```
 
-or:
 
-```bash
-python3 main.py --config_path "configs/train.yml"
-```
 
 Checkpoints are saved to `model_ckpt/<timestamp>/`.
 
@@ -107,10 +103,8 @@ Checkpoints are saved to `model_ckpt/<timestamp>/`.
 bash bash_inference.sh
 ```
 
-or:
-
 ```bash
-python3 main.py --config_path "configs/inference.yml"
+
 ```
 
 Outputs are saved to:
