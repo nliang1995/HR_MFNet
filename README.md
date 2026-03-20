@@ -2,7 +2,7 @@
 
 <h1 align="center">Hierarchical Refinement Network with Multi-Frequency Interaction for retinal vessel segmentation. </h1>
 
-## 📌 Overview
+## Overview
 
 Precise retinal vasculature segmentation is critical for diagnosing various ophthalmological diseases, yet inherent challenges persist due to the complex multi-scale intricacy of vascular structure. Existing methods often struggle to balance the representation of high-frequency components and fine-grained details, which are crucial for precise retinal vasculature segmentation. To address this challenge, we propose a Hierarchical Refinement Network with Multi-Frequency Interaction (HR-MFNet), a novel architecture designed to explicitly handle features across different scales. Specifically, the Multi-Frequency Interaction Enhancer (MFIE) employs parallel frequency-specific branches with asymmetric channel shuffle to enhance feature diversity while decoupling structural information from local fine-grained details. Then, the Spatial Detail Feature Calibration (SDFC) module leverages high-frequency residuals from a Laplacian pyramid to anchor delicate vascular boundaries, effectively compensating for spatial detail loss. Finally, the Cross-Scale Hierarchical Fusion (CSHF) module bridges the semantic gap across scales via a dynamic masking mechanism, which leverages high-confidence predictions from deep-level representations to adaptively suppress redundant high-resolution features while maintaining delicate spatial details. Extensive experiments are conducted on multiple public datasets, including DRIVE, Chase\_DB1, OCTA500-6M, OCTA500-3M, and DAC1 datasets. HR-MFNet achieves F1 scores of 82.90\%, 81.50\%, 88.84\%, 91.54\% and 79.07\%,  along with MIoU scores of 70.85\%, 68.77\%, 79.91\%, 84.63\% and 65.73\%. These results outperform those of 11 competing networks for retinal vasculature segmentation.
 
@@ -90,8 +90,6 @@ When set to `auto`, these fields are resolved from `dataset_name`:
 bash bash_train.sh
 ```
 
-
-
 Checkpoints are saved to `model_ckpt/<timestamp>/`.
 
 ### Inference
@@ -101,10 +99,6 @@ Checkpoints are saved to `model_ckpt/<timestamp>/`.
 
 ```bash
 bash bash_inference.sh
-```
-
-```bash
-
 ```
 
 Outputs are saved to:
